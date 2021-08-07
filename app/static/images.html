@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>  
-    <head style="background-color: #90938E;">    
+    <head style="background-color: #a6a6ed;">    
         <!--      This is the title that appears in the browser tab.      Replace it with the title of your app    -->    
         <title>Bingo Card Generator</title>    
         <link rel="stylesheet" media="screen" href="/static/bootstrap.min.css">    
         <!-- If you add custom CSS, put it after the above bootstrap link -->  
     </head>
-    <body style="background-color: #5F8F29">    
+    <body style="background-color: #9fb3c0">    
         <div class="container">      
             <!--         This top section has the gray background and large text containing the        
                 name of the app      -->      
@@ -21,10 +21,9 @@
                         <!--              Replace with a photo relevant to your project (and caption if              
                             applicable). It will automatically fill the same width as the              
                             template version due to CSS styling.            -->           
-               
                       
                             <p>          
-                            Give us a folder with 25 images, and we'll shuffle 'em up and save some pdf bingo cards to
+                            Give us a folder with some image files, and we'll shuffle 'em up and save some pdf bingo cards to
                             a new folder! Here are some examples:    
                             </p> 
                             
@@ -54,8 +53,16 @@
                                 <input type="text" id="input-3" name="num_cards" value="10"> 
                                 <br>  
                                 <br>  
-                                <label for="input-4">What is the word you would like to have at the top of your bingo card?</label> <br>             
-                                <input type="text" id="input-4" name="word" value="BINGO!"> 
+                                <label for="input-4">Number of ROWS?</label> <br>             
+                                <input type="text" id="input-4" name="nrows" value="5"> 
+                                <br> 
+                                <br>  
+                                <label for="input-5">Number of COLUMNS?</label> <br>             
+                                <input type="text" id="input-5" name="ncols" value="5"> 
+                                <br> 
+                                <br>  
+                                <label for="input-6">What is the word you would like to have at the top of your bingo card?</label> <br>             
+                                <input type="text" id="input-6" name="word" value="BINGO!"> 
                                 <br>  
                               
                             <!-- You shouldn't need to change the submit button -->              

@@ -5,7 +5,6 @@ from itertools import product
 from PIL import Image
 import numpy as np
 import matplotlib.pyplot as plt
-import time
 
 # https://wireframe.cc/pro/pp/558eb12f1461834 
 
@@ -22,11 +21,12 @@ def generate_cards():
 
     board_title = request.form.get('word')
     folder = request.form.get('image_folder')
-    destination = request.form.get('destination_path')
+    destination_path = request.form.get('destination_path')
     path = os.listdir(folder)
     coordinates = list(product(range(5), range(5)))
     num_cards = request.form.get('num_cards')
-    
+    plt.switch_backend('Agg') 
+
     for i in range(int(num_cards)):
         fig, ax = plt.subplots(ncols=5, nrows=5, figsize=(15,15)) # may need to adjust plot size
         perm = coordinates
@@ -36,7 +36,7 @@ def generate_cards():
         for j, pair in enumerate(perm):
             # resize images to fit in template
             
-            img_file = Image.open(folder+path[j])
+            img_file = Image.open(folder+'/'+path[j])
             print(path[i])
             img_file = img_file.resize((400,400)) # placeholder size for now
             # place images in bingo template
@@ -50,18 +50,16 @@ def generate_cards():
         fig.suptitle(board_title.upper(), size=100)
         fig.tight_layout()
         
-        fig.savefig(destination+f'board{i}', format='pdf')
-        time.sleep(2)
+        fig.savefig(destination_path+f'/board{i}', format='pdf')
 
-    return redirect(url_for("confirmation"), folder=folder)
+    return redirect(url_for("confirmation", destination_path=destination_path))
 
 @app.route("/confirmation")
 def confirmation():    
     """ Confirm that Bingo Cards were created. """        
-
-    
-    # Return the results pge    
-    return render_template("confirmation.html")
+    destination_path = request.form.get('destination_path')
+    # Return the results page    
+    return render_template("confirmation.html", destination_path=destination_path)
     
 if __name__ == "__main__":    
     serve(app, host='0.0.0.0', port=5000)

@@ -57,7 +57,7 @@ def generate_cards():
 @app.route("/confirmation")
 def confirmation():    
     """ Confirm that Bingo Cards were created. """        
-    destination_path = request.form.get('destination_path')
+    destination_path = request.args.get('destination_path')
     # Return the results page    
     return render_template("confirmation.html", destination_path=destination_path)
     

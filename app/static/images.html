@@ -12,8 +12,7 @@
                 name of the app      -->      
             <div class="jumbotron" style="background-color: #90938E;">        
                 <!-- Replace with the name of your app-->        
-                <h1 class="display-3" style='text-align: center;'>Drug Use Predictor</h1>
-                <h1 class="display-5" style='text-align: center;'>Using Logistic Regression</h1>      
+                <h1 class="display-3" style='text-align: center;'>Bingo Card Generator</h1>     
             </div>      
             <!-- This section contains a photo + the form for the user to enter data-->      
             <div class="container">         
@@ -25,52 +24,39 @@
                
                       
                             <p>          
-                            This app deploys a Logistic Regression model to predict drug use. 
-                            It was created with the <a href="http://www.monitoringthefuture.org/"> Monitoring the Future</a> dataset, a study funded by the 
-                            Substance Abuse and Mental Health Services Administration (SAMHSA) to study trends in teenage use and attitudes
-                            towards drugs.       
+                            Give us a folder with 25 images, and we'll shuffle 'em up and save some pdf bingo cards to
+                            a new folder! Here are some examples:    
                             </p> 
                             
-                            <img src="/static/mtflogo.jpg" alt="mtflogo" style="width: 30%;"><br><br>
-                            
-                            <p>          
-                            Every year, approximately 11,000-16,000 students across over 100 schools in the United States are given a survey
-                            that asks questions about their past drug use, opinions on the risks of drugs, and general demographic information.
-                            
-                            The raw information (which can be found <a href="https://www.icpsr.umich.edu/web/NAHDAP/studies/6716#">HERE</a>) has been converted into a usable dataset which can be found on <a href="https://www.kaggle.com/jamiedowat/monitoring-the-future-12th-grade-drug-use-survey">Kaggle</a>.
-                            </p>              
+                            <img src="/static/exampleboard1.jpg" alt="exampleboard1" style="width: 30%;"><br><br>
+                            <img src="/static/exampleboard2.jpg" alt="exampleboard2" style="width: 30%;"><br><br>
+                                     
                         <hr>
-                        <div class="container", style="text-align: center;">
-
-                            <h1 class="display-5" style='text-align: center;'>Take the Survey:</h1> 
-                            <p>This model is going to perform a fancy linear transformation on the data you enter into this survey, to try to guess whether or not you have used 
-                                any illicit drugs (including marijuana) within the past year.</p>
-                            <p>This model was only trained on high school seniors, so if you wanna give the model it's best shot at guessing right, fill out the survey as your 12th grade self!</p>
-                        </div>
                         
                         <div class="col-md">            
                                        
                             <form action="/generator" method="post">
                                           
                                 <br>  
-                                <label for="input-2">If you are a high school senior, what is the year? (If not, what year were you a high school senior?)</label> <br>             
-                                <input type="text" id="input-2" name="yr_adminst" value="2021"> 
+                                <label for="input-1">Directory path with your 25 images:</label> <br>             
+                                <input type="text" id="input-1" name="image_folder" value="/Users/jamiedowat/pyspace/bingo_card_generator/bingo_test"> 
                                 <br>         
-                                <br>     
-                                <label for="input-3">What region of the US do you live in?</label> <br>                       
-                                <select id="input-3" name="region">                
-                                    <option value="Northeast">Northeast</option>                
-                                    <option value="Midwest">Midwest</option>                
-                                    <option value="West">West</option>                
-                                    <option value="South">South</option>             
-                                </select>              
-                                <br>
-                                
-                            <!-- rest of template -->
+                                <br>  
+                                <label for="input-2">Empty directory path where you would like your bingo cards stored:</label> <br>             
+                                <input type="text" id="input-2" name="destination_path" value="/Users/jamiedowat/pyspace/bingo_card_generator/my_cards"> 
+                                <br>  
+                                <br>  
+                                <label for="input-3">How many bingo cards would you like?</label> <br>             
+                                <input type="text" id="input-3" name="num_cards" value="10"> 
+                                <br>  
+                                <br>  
+                                <label for="input-4">What is the word you would like to have at the top of your bingo card?</label> <br>             
+                                <input type="text" id="input-4" name="word" value="BINGO!"> 
+                                <br>  
                               
                             <!-- You shouldn't need to change the submit button -->              
                             <br> 
-                            <input type="submit" class="btn btn-primary btn-lg" value="Predict!">            
+                            <input type="submit" class="btn btn-primary btn-lg" value="Make your Cards!">            
                         </form>          
                     </div>        
                 </div>        

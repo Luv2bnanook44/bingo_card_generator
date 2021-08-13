@@ -1,6 +1,6 @@
 from flask import Flask, send_from_directory, render_template, request, redirect, url_for 
-from waitress import serve
 import os
+# from waitress import serve
 from itertools import product 
 from PIL import Image
 import numpy as np
@@ -8,12 +8,12 @@ import matplotlib.pyplot as plt
 
 # https://wireframe.cc/pro/pp/558eb12f1461834 
 
-app = Flask(__name__, static_url_path="/static")
+app = Flask(__name__)
 
 @app.route("/")
 def index():    
     """Return the main page."""    
-    return send_from_directory("static", "images.html")
+    return render_template("images.html")
 
 @app.route("/generator", methods=["POST"])
 def generate_cards():    
@@ -72,5 +72,9 @@ def confirmation():
     # Return the results page    
     return render_template("confirmation.html", message=message)
     
-if __name__ == "__main__":    
-    serve(app, host='0.0.0.0', port=5000)
+# if __name__ == "__main__":    
+#     serve(app, host='0.0.0.0', port=5000)
+
+if __name__ == "__main__":
+    # serve(app, host='0.0.0.0', port=5000)
+    app.run(debug=True)

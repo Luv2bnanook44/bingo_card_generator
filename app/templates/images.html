@@ -1,26 +1,22 @@
 <!DOCTYPE html>
 <html>  
     <head style="background-color: #a6a6ed;">    
-        <!--      This is the title that appears in the browser tab.      Replace it with the title of your app    -->    
+
         <title>Bingo Card Generator</title>    
-        <link rel="stylesheet" media="screen" href="/static/bootstrap.min.css">    
-        <!-- If you add custom CSS, put it after the above bootstrap link -->  
+        <link rel="stylesheet" media="screen" href="{{url_for('static', filename='bootstrap.min.css')}}">    
+
     </head>
     <body style="background-color: #9fb3c0">    
         <div class="container">      
-            <!--         This top section has the gray background and large text containing the        
-                name of the app      -->      
+    
             <div class="jumbotron" style="background-color: #90938E;">        
-                <!-- Replace with the name of your app-->        
+    
                 <h1 class="display-3" style='text-align: center;'>Bingo Card Generator</h1>     
             </div>      
-            <!-- This section contains a photo + the form for the user to enter data-->      
+     
             <div class="container">         
                 <div class="row">          
-                    <div class="col-md" style="text-align: center;">            
-                        <!--              Replace with a photo relevant to your project (and caption if              
-                            applicable). It will automatically fill the same width as the              
-                            template version due to CSS styling.            -->           
+                    <div class="col-md" style="text-align: center;">               
                       
                             <p>          
                             Give us a folder with some image files, and we'll shuffle 'em up and save some pdf bingo cards to
@@ -28,9 +24,9 @@
                             </p> 
                             
                             <div id="banner">
-                                <span class="icons"><img src="/static/exampleboard1.jpg" width="230" height="250">
+                                <span class="icons"><img src="static/exampleboard1.jpg" width="230" height="250">
                                 </span>
-                                <span class="icons"><img src="/static/exampleboard2.jpg" width="230" height="250">
+                                <span class="icons"><img src="static/exampleboard2.jpg" width="230" height="250">
                                 </span>
                             </div>
                                  

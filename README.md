@@ -6,6 +6,9 @@ Web app that takes in images and returns bingo cards in pdf form.
 * Add "Show in Finder" button
 * Possibly add capability to store bingo cards in database, user chooses to download 
 * Show finished products in confirmation page
+* Add button to choose font of word on top
+* Add instructions for how to find filepath and examples for windows and mac
+* option to choose different styles of Bingo cards
 
 ### Current app:
 
